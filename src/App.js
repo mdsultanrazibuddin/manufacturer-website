@@ -1,20 +1,23 @@
 
+import { Route, Routes } from 'react-router-dom';
+import About from './Pages/About/About';
 import './App.css';
+import Home from './Pages/Home/Home';
+import Navbar from './Pages/Shared/Navbar';
 
 function App() {
   return (
-    <div >
-    
-    <div class="card w-96 bg-base-100 shadow-xl">
-  <figure><img src="https://api.lorem.space/image/shoes?w=400&h=225" alt="Shoes" /></figure>
-  <div class="card-body">
-    <h2 class="card-title">Shoes!</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-    <div class="card-actions justify-end">
-      <button class="btn btn-primary">Buy Now</button>
-    </div>
-  </div>
-</div>
+    <div className='px-12' >
+    <Navbar/>
+     
+    <Routes>
+      <Route path="/" element={<Home/>}/>
+      <Route path="about" element={<About/>}/>
+       
+        
+     
+    </Routes>
+   
 
     </div>
   );
