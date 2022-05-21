@@ -19,7 +19,7 @@ const Navbar = () => {
     const menuItems = <>
          <li><Link to ='/'>Home</Link></li>
          <li><Link to ='/appointment'>Appointment</Link></li>
-         <li><Link to ='/review'>Review</Link></li>
+         <li><Link to ='/parts'>Parts</Link></li>
          <li><Link to ='/about'>About</Link></li>
          <li><Link to ='/contact'>Contact</Link></li>
          {/* <li>{ user ? <button onClick={logout} class="btn btn-ghost">Logout</button> : <Link to ='/login'>Login</Link>}</li> */}
@@ -36,7 +36,7 @@ const Navbar = () => {
         {menuItems }
       </ul>
     </div>
-    <h1 class=" normal-case text-2xl font-bold">Doctors Portal</h1>
+    <h1 class=" normal-case text-2xl font-bold">Daisy UI</h1>
   </div>
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal p-0">

@@ -1,0 +1,62 @@
+[
+    {
+      "_id": 1,
+      "name": "Solid State Drive",
+      "img":"./Parts-Image/tb-ssd-drive-.jpg",
+      "description":,
+      "order quantity":,
+      "available quantity":,
+      "price":"2100"
+
+    },
+    {
+      "_id": 2,
+      "name": "Hard Drive",
+      "img":"./Parts-Image/hard-drive.jpg",
+      "description":,
+      "order quantity":,
+      "available quantity":,
+      "price":"3600"
+      
+    },
+    {
+      "_id": 3,
+      "name": "Motherboard",
+      "img":"./Parts-Image/motherboard.jpg",
+      "description":,
+      "order quantity":,
+      "available quantity":,
+      "price":"11000"
+      
+    },
+    {
+      "_id": 4,
+      "name": "Graphics Card",
+      "img":"./Parts-Image/graphics-card-against-white-background.jpg",
+      "description":,
+      "order quantity":,
+      "available quantity":,
+      "price":"8000"
+      
+    },
+    {
+      "_id": 5,
+      "name": "Processor",
+      "img":"./Parts-Image/intel-i5-computer-processor-500x500.jpg",
+      "description":,
+      "order quantity":,
+      "available quantity":,
+      "price":"5200"
+     
+    },
+    {
+      "_id": 6,
+      "name": "CPU Cooling Fan",
+      "img":"./Parts-Image/cpu-cooling-fan.jpg",
+      "description":,
+      "order quantity":,
+      "available quantity":,
+      "price":"500"
+     
+    }
+  ]
