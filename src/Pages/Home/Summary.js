@@ -29,7 +29,7 @@ const Summary = () => {
     <AiOutlineFundProjectionScreen/>
     </div>
     
-    <div class="stat-value">590+</div>
+    <div class="stat-value">999+</div>
     <div class="stat-title text-base text-primary">Complete Projects</div>
     
     
@@ -40,7 +40,7 @@ const Summary = () => {
   <BsFillPeopleFill/>
   </div>
     
-    <div class="stat-value">273+</div>
+    <div class="stat-value">10k+</div>
     <div class="stat-title text-base text-primary">Happy Clients</div>
     
     
@@ -50,7 +50,7 @@ const Summary = () => {
   <VscFeedback/>
   </div>
     
-    <div class="stat-value">432+</div>
+    <div class="stat-value">5k+</div>
     <div class="stat-title text-base text-primary">Feedbacks</div>
     
     
