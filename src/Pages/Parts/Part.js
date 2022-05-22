@@ -1,23 +1,24 @@
 import React from 'react';
+import MainButton from '../Shared/MainButton';
 
 const Part = ({part}) => {
     const{name,img,description,orderQuantity,availableQuantity,price} = part
     return (
-        <div class="card lg:max-w-lg bg-base-100 shadow-xl text-center">
+        <div class="card lg:max-w-lg bg-base-100 shadow-xl mt-5 ">
         <div class="card-body">
-        <figure className='w-full h-52'><img src={img} alt="Album"/></figure>
-          <h2 class="text-xl font-bold text-secondary">{name}</h2>
-          <p class="">Description: {description}</p>
-          <p class="">Order Quantity: {orderQuantity}</p>
-          <p class="">Available Quantity: {availableQuantity}</p>
-          <p class="">Price: {price}</p>
+            <figure className='w-full h-52'><img src={img} alt="Album"/></figure>
+          <h2 class="text-2xl font-bold text-secondary text-center mt-10">{name}</h2>
+          <p class=""> <span className=' font-bold text-secondary'>Description:</span> {description}</p>
+          <p class=""><span className=' font-bold text-secondary'>Order Quantity:</span> {orderQuantity}</p>
+          <p class=""><span className=' font-bold text-secondary'>Available Quantity:</span> {availableQuantity}</p>
+          <p class=""><span className=' font-bold text-secondary'>Price:</span> ${price}</p>
           
-         
-          <div class="card-actions justify-center">
-          
-            
+          <div className='text-center my-5'>
+             <MainButton>Buy Now</MainButton>
           </div>
+          
         </div>
+        
       </div>
     );
 };

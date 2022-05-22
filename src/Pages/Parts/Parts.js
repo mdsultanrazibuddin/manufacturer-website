@@ -13,7 +13,7 @@ const Parts = () => {
     })
     return (
         <div>
-           <h3 className='text-xl text-secondary text-center mb-10'>Top Parts</h3>  
+           <h3 className='text-5xl text-secondary text-center mt-10'>Top Parts</h3>  
 
            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-20'>
                {
