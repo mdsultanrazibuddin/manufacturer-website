@@ -3,10 +3,10 @@ import React from 'react';
 
 const Summary = () => {
     return (
-        <div className='text-center'>
+        <div className='text-center '>
             <h1>Millions Business Trust Us</h1>
 
-            <div class="stats stats-vertical lg:stats-horizontal shadow text-2xl text-center">
+            <div class="stats stats-vertical lg:stats-horizontal shadow text-2xl text-center bg-info">
   
   <div class="stat">
   <div class="stat-figure text-primary">
