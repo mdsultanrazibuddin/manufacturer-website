@@ -9,10 +9,10 @@ const footer = () => {
         <div>
             <footer class="footer footer-center p-10  text-base-content rounded">
   <div class="grid grid-flow-col gap-4">
-    <button >About us</button> 
-    <button >Contact</button> 
-    <button >Jobs</button> 
-    <button >Press kit</button>
+    <button className='font-bold'>About us</button> 
+    <button className='font-bold'>Contact</button> 
+    <button className='font-bold'>Jobs</button> 
+    <button className='font-bold'>Press kit</button>
   </div> 
   <div>
     <div class="grid grid-flow-col gap-4">
@@ -22,7 +22,7 @@ const footer = () => {
     </div>
   </div> 
   <div>
-    <p>Copyright &copy;  {year}. All Rights Reserved.</p>
+    <p className='font-bold'>Copyright &copy;  {year}- All Rights Reserved by <span className='text-primary'>SR Tech & Engineering Ltd</span> .</p>
   </div>
 </footer>
         </div>

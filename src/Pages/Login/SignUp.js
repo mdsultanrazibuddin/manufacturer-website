@@ -4,6 +4,7 @@ import {useCreateUserWithEmailAndPassword,  useSignInWithGoogle, useUpdateProfil
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../Shared/Loading';
+import logo from '../../Images/google (1).png'
 
 const SignUp = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -137,7 +138,9 @@ const SignUp = () => {
 
                     <div class="divider">OR</div>
                     
-                    <button onClick={() => signInWithGoogle()} class="btn btn-outline">Continue With Google</button>
+                    <button onClick={() => signInWithGoogle()} class="btn btn-outline">
+                    <img className="mr-2" src={logo} alt="" srcset="" />
+                        Continue With Google</button>
                 
                 </div>
             </div>

@@ -39,7 +39,7 @@ const Navbar = () => {
         {menuItems }
       </ul>
     </div>
-    <h1 class=" normal-case text-2xl font-bold">Daisy UI</h1>
+    <h1 class=" normal-case text-3xl font-bold text-primary">SR Tech & Engineering Ltd </h1>
   </div>
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal p-0">

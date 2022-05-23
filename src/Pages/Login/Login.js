@@ -4,6 +4,9 @@ import {useSignInWithEmailAndPassword, useSignInWithGoogle} from 'react-firebase
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../Shared/Loading';
+import logo from '../../Images/google (1).png'
+
+
 
 
 const Login = () => {
@@ -40,7 +43,7 @@ const Login = () => {
     }
 
     return (
-        <div className='flex h-screen justify-center items-center'>
+        <div className='flex h-screen justify-center items-center mt-10'>
             <div class="card w-96 bg-base-100 shadow-xl">
                 <div class="card-body">
                     <h2 class="text-2xl text-center font-bold">Login now</h2>
@@ -105,14 +108,19 @@ const Login = () => {
 
 
                          {signInError}
-
-                        <input className='btn w-full max-w-xs text-white ' type="submit" value="Login" />
+                      
+                        <input className='btn w-full max-w-xs text-white ' type="submit" value="Login"/> 
+                        
+                       
+                        
                     </form>
-                    <p><small>New here ? <Link className='text-primary' to="/signup">Create New Account</Link></small></p>
+                    <p><small>New here to SR Tech & Engineering Ltd ? <Link className='text-primary' to="/signup">Create New Account</Link></small></p>
 
                     <div class="divider">OR</div>
 
-                    <button onClick={() => signInWithGoogle()} class="btn btn-outline">Continue With Google</button>
+                    <button onClick={() => signInWithGoogle()} class="btn btn-outline">
+                    <img className="mr-2" src={logo} alt="" srcset="" />
+                        Continue With Google</button>
                 
                 </div>
             </div>
