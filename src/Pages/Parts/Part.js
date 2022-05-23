@@ -16,7 +16,7 @@ const Part = ({part}) => {
           
           <div className='text-center my-5'>
              <MainButton>
-                  <Link to ="/ButtonModal">Buy Now</Link>
+                  <Link  to ="/ButtonModal">Buy Now</Link>
                </MainButton>
           </div>
           

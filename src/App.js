@@ -9,6 +9,7 @@ import Login from './Pages/Login/Login';
 import SignUp from './Pages/Login/SignUp';
 import RequireAuth from './Pages/Login/RequireAuth';
 import ButtonModal from './Pages/Parts/ButtonModal';
+import NotFound from './Pages/Shared/NotFound';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
       }/>
       <Route path="login" element={<Login/>}/>
       <Route path="signup" element={<SignUp/>}/>
+      <Route path="*" element={<NotFound/>}/>
        
         
      
