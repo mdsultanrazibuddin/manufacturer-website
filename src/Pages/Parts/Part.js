@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import MainButton from '../Shared/MainButton';
 
 const Part = ({part}) => {
@@ -14,7 +15,9 @@ const Part = ({part}) => {
           <p class=""><span className=' font-bold text-secondary'>Price:</span> ${price}</p>
           
           <div className='text-center my-5'>
-             <MainButton>Buy Now</MainButton>
+             <MainButton>
+                  <Link to ="/ButtonModal">Buy Now</Link>
+               </MainButton>
           </div>
           
         </div>
