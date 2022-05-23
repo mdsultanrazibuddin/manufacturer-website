@@ -1,6 +1,6 @@
 
 import { Route, Routes } from 'react-router-dom';
-import About from './Pages/About/About';
+
 import './App.css';
 import Home from './Pages/Home/Home';
 import Navbar from './Pages/Shared/Navbar';
@@ -11,6 +11,7 @@ import RequireAuth from './Pages/Login/RequireAuth';
 import ButtonModal from './Pages/Parts/ButtonModal';
 import NotFound from './Pages/Shared/NotFound';
 import Portfolio from './Pages/Shared/Portfolio';
+import Blogs from './Pages/Shared/Blogs';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
      
     <Routes>
       <Route path="/" element={<Home/>}/>
-      <Route path="about" element={<About/>}/>
+      <Route path="blogs" element={<Blogs/>}/>
       <Route path="parts" element={
           <RequireAuth>
               <Parts/>
