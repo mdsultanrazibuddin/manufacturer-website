@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react';
 import Part from '../Parts/Part';
 
 
+
 const Parts = () => {
     const [parts, setParts] = useState([]);
+    
+    
     
     useEffect( () => {
         fetch('http://localhost:5000/part')
@@ -24,6 +27,7 @@ const Parts = () => {
                    ></Part>)
                }
            </div>
+           
           
         </div>
     );

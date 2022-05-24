@@ -3,7 +3,7 @@
       "name": "Solid State Drive",
       "img":"./Parts-Image/tb-ssd-drive-.jpg",
       "description":"A solid-state drive (SSD) is a new generation of storage device used in computers. SSDs use flash-based memory, which is much faster than a traditional mechanical hard disk.",
-      "orderQuantity":"221",
+      "orderQuantity":"100",
       "availableQuantity":"541",
       "price":"2100"
 
@@ -13,7 +13,7 @@
       "name": "Hard Drive",
       "img":"./Parts-Image/hard-drive.jpg",
       "description":"hard disk, also called hard disk drive or hard drive, magnetic storage medium for a computer. Hard disks are flat circular plates made of aluminum or glass and coated with a magnetic material. ",
-      "orderQuantity":"312",
+      "orderQuantity":"100",
       "availableQuantity":"755",
       "price":"3600"
       
@@ -23,7 +23,7 @@
       "name": "Motherboard",
       "img":"./Parts-Image/motherboard.jpg",
       "description":"A motherboard is the main printed circuit board (PCB) in a computer. The motherboard is a computer's central communications backbone connectivity point, through which all components.",
-      "orderQuantity":"375",
+      "orderQuantity":"100",
       "availableQuantity":"687",
       "price":"11000"
       
@@ -33,7 +33,7 @@
       "name": "Graphics Card",
       "img":"./Parts-Image/graphics-card-against-white-background.jpg",
       "description":"A graphics card provides high-quality visual display by processing and executing graphical data using advanced graphical techniques, features and functions.",
-      "orderQuantity":"341",
+      "orderQuantity":"100",
       "availableQuantity":"544",
       "price":"8000"
       
@@ -43,7 +43,7 @@
       "name": "Processor",
       "img":"./Parts-Image/intel-i5-computer-processor-500x500.jpg",
       "description":"A processor (CPU) is the logic circuitry that responds to and processes the basic instructions that drive a computer. The CPU is seen as the main and most crucial integrated circuitry (IC) chip in a computer.",
-      "orderQuantity":"788",
+      "orderQuantity":"100",
       "availableQuantity":"754",
       "price":"5200"
      
@@ -53,9 +53,9 @@
       "name": "CPU Cooling Fan",
       "img":"./Parts-Image/cpu-cooling-fan.jpg",
       "description":"A CPU cooler is a component that draws heat away from a CPU chip and other hot-running chips such as a graphics processor (GPU). The cooler keeps the systems' components cool enough to run efficiently.",
-      "orderQuantity":"487",
+      "orderQuantity":"100",
       "availableQuantity":"513",
-      "price":"500"
+      "price":"1500"
      
     }
   ]
