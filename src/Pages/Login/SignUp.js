@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React  from 'react';
 import auth from '../../firebase.init';
 import {useCreateUserWithEmailAndPassword,  useSignInWithGoogle, useUpdateProfile} from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link,  useNavigate } from 'react-router-dom';
 import Loading from '../Shared/Loading';
 import logo from '../../Images/google (1).png'
+import useToken from '../../Hooks/useToken';
 
 const SignUp = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -14,34 +15,33 @@ const SignUp = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
-    const [updateProfile,updating,updateError] = useUpdateProfile(auth);
-    
+    ] = useCreateUserWithEmailAndPassword(auth);
+
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
+    const [token]  = useToken(user || gUser);
+
+    const navigate = useNavigate();
 
     let signInError;
-    const navigate = useNavigate();
-    const location = useLocation();
-    let from = location.state?.from?.pathname || "/";
-
-    useEffect( () =>{
-        if (user || gUser) {
-            navigate(from, { replace: true });
-        }
-    }, [user, gUser, from, navigate])
 
     if (loading || gLoading || updating) {
         return <Loading></Loading>
     }
 
-    if(error || gError || updateError){
-        signInError= <p className='text-red-500'><small>{error?.message || gError?.message || updateError?.message}</small></p>
+    if (error || gError || updateError) {
+        signInError = <p className='text-red-500'><small>{error?.message || gError?.message || updateError?.message}</small></p>
+    }
+
+    if (token) {
+        navigate('/parts');
     }
 
     const onSubmit = async data => {
-      await  createUserWithEmailAndPassword(data.email, data.password);
-      await updateProfile ({displayName: data.name})
-      console.log('done');
-      navigate('/parts')
+        await createUserWithEmailAndPassword(data.email, data.password);
+        await updateProfile({ displayName: data.name });
+        console.log('update done');
+        navigate('/parts');
     }
 
     return (

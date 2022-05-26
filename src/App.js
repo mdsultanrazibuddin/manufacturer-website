@@ -14,6 +14,10 @@ import Portfolio from './Pages/Shared/Portfolio';
 import Blogs from './Pages/Shared/Blogs';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import DashBoard from './Pages/About/DashBoard/DashBoard';
+import MyProducts from './Pages/About/DashBoard/MyProducts';
+import MyReviews from './Pages/About/DashBoard/MyReviews';
+import MyHistory from './Pages/About/DashBoard/MyHistory';
 
 function App() {
   return (
@@ -33,6 +37,17 @@ function App() {
               <ButtonModal/>
           </RequireAuth>
       }/>
+      <Route path="dashBoard" element={
+          <RequireAuth>
+              <DashBoard/>
+          </RequireAuth>
+      }>
+        <Route index element={<MyProducts></MyProducts>}></Route>
+        <Route path='review' element={<MyReviews></MyReviews>}></Route>
+        <Route path='history' element={<MyHistory></MyHistory>}></Route>
+
+
+      </Route>
       <Route path="login" element={<Login/>}/>
       <Route path="signup" element={<SignUp/>}/>
       <Route path="*" element={<NotFound/>}/>

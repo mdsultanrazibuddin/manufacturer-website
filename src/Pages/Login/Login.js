@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../Shared/Loading';
 import logo from '../../Images/google (1).png'
+import useToken from '../../Hooks/useToken';
 
 
 
@@ -18,6 +19,7 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const [token]  = useToken(user || gUser);
 
     let signInError;
     const navigate = useNavigate();
@@ -25,10 +27,10 @@ const Login = () => {
     let from = location.state?.from?.pathname || "/";
 
     useEffect( () =>{
-        if (user || gUser) {
+        if (token) {
             navigate(from, { replace: true });
         }
-    }, [user, gUser, from, navigate])
+    }, [token, from, navigate])
 
     if (loading || gLoading) {
         return <Loading></Loading>
@@ -114,7 +116,7 @@ const Login = () => {
                        
                         
                     </form>
-                    <p><small>New here to SR Tech & Engineering Ltd ? <Link className='text-primary' to="/signup">Create New Account</Link></small></p>
+                    <p><small>New here to SR Tech ? <Link className='text-primary' to="/signup">Create New Account</Link></small></p>
 
                     <div class="divider">OR</div>
 

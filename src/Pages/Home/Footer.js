@@ -22,7 +22,7 @@ const footer = () => {
     </div>
   </div> 
   <div>
-    <p className='font-bold'>Copyright &copy;  {year}- All Rights Reserved by <span className='text-primary'>SR Tech & Engineering Ltd</span> .</p>
+    <p className='font-bold'>Copyright &copy;  {year}- All Rights Reserved by <span className='text-primary'>SR Tech</span> .</p>
   </div>
 </footer>
         </div>
