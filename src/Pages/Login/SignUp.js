@@ -14,7 +14,7 @@ const SignUp = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
     const [updateProfile,updating,updateError] = useUpdateProfile(auth);
     
 
@@ -41,7 +41,7 @@ const SignUp = () => {
       await  createUserWithEmailAndPassword(data.email, data.password);
       await updateProfile ({displayName: data.name})
       console.log('done');
-      navigate('/appointment')
+      navigate('/parts')
     }
 
     return (

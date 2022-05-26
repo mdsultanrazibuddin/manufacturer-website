@@ -12,6 +12,8 @@ import ButtonModal from './Pages/Parts/ButtonModal';
 import NotFound from './Pages/Shared/NotFound';
 import Portfolio from './Pages/Shared/Portfolio';
 import Blogs from './Pages/Shared/Blogs';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -39,7 +41,7 @@ function App() {
         
      
     </Routes>
-   
+    <ToastContainer/>
 
     </div>
   );

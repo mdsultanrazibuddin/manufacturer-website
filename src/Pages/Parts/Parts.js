@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Part from '../Parts/Part';
+import ButtonModal from './ButtonModal';
 
 
 
 const Parts = () => {
     const [parts, setParts] = useState([]);
+    const [product, setProduct] = useState(null)
     
     
     
@@ -23,11 +25,17 @@ const Parts = () => {
                    parts.map(part => <Part
                    key={part._id}
                    part ={part}
+                   setProduct ={setProduct}
                    
                    ></Part>)
                }
            </div>
-           
+           {
+               product && <ButtonModal
+               
+               product={product}
+               ></ButtonModal>
+           }
           
         </div>
     );
