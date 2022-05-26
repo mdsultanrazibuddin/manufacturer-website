@@ -17,7 +17,12 @@ import 'react-toastify/dist/ReactToastify.css';
 import DashBoard from './Pages/About/DashBoard/DashBoard';
 import MyProducts from './Pages/About/DashBoard/MyProducts';
 import MyReviews from './Pages/About/DashBoard/MyReviews';
-import MyHistory from './Pages/About/DashBoard/MyHistory';
+
+import MyProfile from './Pages/About/DashBoard/MyProfile';
+import AddProduct from './Pages/About/DashBoard/AddProduct';
+import MakeAdmin from './Pages/About/DashBoard/MakeAdmin';
+import ManageAllProduct from './Pages/About/DashBoard/ManageAllProduct';
+import ManageProduct from './Pages/About/DashBoard/ManageProduct';
 
 function App() {
   return (
@@ -44,7 +49,11 @@ function App() {
       }>
         <Route index element={<MyProducts></MyProducts>}></Route>
         <Route path='review' element={<MyReviews></MyReviews>}></Route>
-        <Route path='history' element={<MyHistory></MyHistory>}></Route>
+        <Route path='profile' element={<MyProfile></MyProfile>}></Route>
+        <Route path='add' element={<AddProduct></AddProduct>}></Route>
+        <Route path='admin' element={<MakeAdmin></MakeAdmin>}></Route>
+        <Route path='allProduct' element={<ManageAllProduct></ManageAllProduct>}></Route>
+        <Route path='manage' element={<ManageProduct></ManageProduct>}></Route>
 
 
       </Route>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MyHistory = () => {
+const ManageAllProduct = () => {
     return (
         <div>
             <h1>My History</h1>
@@ -8,4 +8,4 @@ const MyHistory = () => {
     );
 };
 
-export default MyHistory;
+export default ManageAllProduct;
