@@ -1,7 +1,8 @@
 import React from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../../Shared/Loading';
-import UserRow from './userRow';
+import User from './User';
+
 
 
 
@@ -30,12 +31,12 @@ const MakeAdmin = () => {
                     </thead>
                     <tbody>
                        {
-                           users.map((user, index)=><UserRow
+                           users.map((user, index)=><User
                            key={user._id}
                            index ={index}
                            user={user}
                            refetch={refetch}
-                           ></UserRow>)
+                           ></User>)
                        }
                     </tbody>
                 </table>
