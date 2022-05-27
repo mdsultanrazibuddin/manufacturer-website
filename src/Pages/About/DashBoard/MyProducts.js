@@ -1,12 +1,15 @@
 
+import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 
 import auth from '../../../firebase.init';
 
 const MyProducts = () => {
     const [products, setProducts] = useState([])
     const [user] = useAuthState(auth);
+    const navigate = useNavigate()
     
     useEffect(()=>{
         if(user){
@@ -16,19 +19,31 @@ const MyProducts = () => {
                     'authorization':`Bearer ${localStorage.getItem('accessToken')}`
                 }
             })
-        .then(res =>res.json())
-        .then(data =>setProducts(data))
+        .then(res =>{
+         
+          if (res.status === 401 || res.status === 403) {
+              signOut(auth);
+              localStorage.removeItem('accessToken');
+              navigate('/');
+          }
+          return res.json()
+      })
+      .then(data => {
+
+        setProducts(data);
+    });
         }
-    }, [user])
+    },[user])
+   
     return (
         <div>
-            <h2>My Products: {products.length}</h2>
+            <h2 className="text-2xl my-5 text-secondary font-bold">My Products: {products.length}</h2>
             <div class="overflow-x-auto">
   <table class="table w-full">
     
     <thead>
       <tr>
-        <th></th>
+        <th>Serial</th>
         <th>Name</th>
         <th>Product</th>
         <th>Email Address</th>

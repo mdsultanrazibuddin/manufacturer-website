@@ -24,6 +24,9 @@ import MakeAdmin from './Pages/About/DashBoard/MakeAdmin';
 import ManageAllProduct from './Pages/About/DashBoard/ManageAllProduct';
 import ManageProduct from './Pages/About/DashBoard/ManageProduct';
 
+
+
+
 function App() {
   return (
     <div className='px-12' >
@@ -32,6 +35,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path="blogs" element={<Blogs/>}/>
+     
       <Route path="parts" element={
           <RequireAuth>
               <Parts/>

@@ -1,4 +1,5 @@
 import React from 'react';
+
 // import { Link } from 'react-router-dom';
 
 import MainButton from '../Shared/MainButton';
@@ -21,13 +22,12 @@ const Part = ({part, setProduct}) => {
           
            
             <MainButton>
-              {/* <Link  to="/buttonModal">Purchase Now</Link> */}
+             
               <label
         htmlFor="booking-modal"
        
         onClick={() => setProduct(part)}
-        class="btn btn-sm btn-secondary text-white uppercase bg-gradient-to-r from-secondary to-primary"
-        >Book Appointment</label>
+        >Order Now</label>
             </MainButton>
                
           </div>

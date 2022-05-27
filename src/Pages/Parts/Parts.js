@@ -4,9 +4,10 @@ import ButtonModal from './ButtonModal';
 
 
 
+
 const Parts = () => {
     const [parts, setParts] = useState([]);
-    const [product, setProduct] = useState(null)
+    const [product, setProduct] = useState()
     
     
     
@@ -34,6 +35,7 @@ const Parts = () => {
                product && <ButtonModal
                
                product={product}
+               setProduct={setProduct}
                ></ButtonModal>
            }
           

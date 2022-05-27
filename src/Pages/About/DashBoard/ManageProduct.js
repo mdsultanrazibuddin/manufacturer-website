@@ -20,7 +20,7 @@ const ManageProduct = () => {
     return (
         <div className='w-50 mx-auto'>
 
-            <h1 className='text-center mt-5 mb-5 TEXT-Title'>All Products</h1>
+            <h1 className="text-2xl my-5 text-secondary font-bold">All Products</h1>
            
 
             <div>

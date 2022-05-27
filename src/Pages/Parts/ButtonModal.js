@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 
 
 const ButtonModal = ({product, setProduct}) => {
-    const {_id,name} = product;
+    const {_id,name,img} = product;
     
     const [user, loading] = useAuthState(auth);
     
@@ -27,7 +27,8 @@ const ButtonModal = ({product, setProduct}) => {
             
             client: user.email,
             clientName: user.displayName,
-            phone: event.target.phone.value
+            phone: event.target.phone.value,
+            Quantity: event.target.quantity.value
         }
 
         fetch('http://localhost:5000/booking', {
@@ -55,6 +56,7 @@ const ButtonModal = ({product, setProduct}) => {
                     <div class="modal modal-bottom sm:modal-middle">
                     <div class="modal-box">
                     <label htmlFor="booking-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                       <img className='w-32' src={img} alt="" srcset="" />
                         <h3 class="font-bold text-lg text-secondary"> {name}</h3>
                         
                         <form onSubmit={ handleBooking} className='grid grid-cols-1 gap-3 justify-items-center mt-2'>
@@ -62,7 +64,8 @@ const ButtonModal = ({product, setProduct}) => {
                            
                            <input type="text" name='name' disabled value={user?.displayName || ''} class="input input-bordered w-full max-w-xs" />
                            <input type="text" name='email' disabled value={user?.email || ''} class="input input-bordered w-full max-w-xs" />
-                           <input type="text" name='phone' placeholder="Phone Number" class="input input-bordered w-full max-w-xs" />
+                           <input type="number" name='phone' placeholder="Phone Number" class="input input-bordered w-full max-w-xs" />
+                           <input type="number" name='quantity' placeholder="Quantity Number" class="input input-bordered w-full max-w-xs" />
                            <input type="submit" value="Submit" class=" btn btn-secondary w-full max-w-xs" />
                         </form>
                         
