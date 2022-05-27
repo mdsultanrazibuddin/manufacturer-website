@@ -208,7 +208,7 @@ const AddProduct = () => {
                     </label>
                 </div>
 
-                <input className='btn w-full max-w-xs text-white' type="submit" value="Add" />
+                <input className='btn w-full max-w-xs text-white my-5' type="submit" value="Add" />
             </form>
         </div>
     );
