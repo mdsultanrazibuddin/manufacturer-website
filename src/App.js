@@ -23,6 +23,7 @@ import AddProduct from './Pages/About/DashBoard/AddProduct';
 import MakeAdmin from './Pages/About/DashBoard/MakeAdmin';
 import ManageAllProduct from './Pages/About/DashBoard/ManageAllProduct';
 import ManageProduct from './Pages/About/DashBoard/ManageProduct';
+import RequireAdmin from './Pages/About/DashBoard/RequireAdmin';
 
 
 
@@ -56,7 +57,7 @@ function App() {
         <Route path='profile' element={<MyProfile></MyProfile>}></Route>
         <Route path='add' element={<AddProduct></AddProduct>}></Route>
         <Route path='admin' element={<MakeAdmin></MakeAdmin>}></Route>
-        <Route path='allProduct' element={<ManageAllProduct></ManageAllProduct>}></Route>
+        <Route path='allProduct' element={<RequireAdmin><ManageAllProduct></ManageAllProduct></RequireAdmin>}></Route>
         <Route path='manage' element={<ManageProduct></ManageProduct>}></Route>
 
 
