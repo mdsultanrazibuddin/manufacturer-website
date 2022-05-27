@@ -1,64 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useQuery } from 'react-query';
+import Loading from '../../Shared/Loading';
+import ConfirmModal from './ConfirmModal';
 
-import useProduct from '../../../Hooks/useProduct';
+
+
+
+import ProductRow from './ProductRow';
 
 const ManageProduct = () => {
-    const [product, setProduct] = useProduct();
-    const handleDelete = id =>{
-        const proceed = window.confirm('Are you Sure');
-        if(proceed){
-            const url = `http://localhost:5000/part/${id}`
-    fetch( url , {method : 'DELETE'})
-    .then (res =>res.json())
-    .then (data =>{
-        console.log(data);
-        const remaining = product.filter(product => product._id !== id);
-        setProduct(remaining)
-    })
+    const [deletingProduct, setDeletingProduct] = useState(null);
+
+    const { data: parts, isLoading, refetch } = useQuery('parts', () => fetch('http://localhost:5000/part', {
+        headers: {
+            authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
+    }).then(res => res.json()));
+
+    if (isLoading) {
+        return <Loading></Loading>
     }
+
     return (
-        <div className='w-50 mx-auto'>
-
-            <h1 className="text-2xl my-5 text-secondary font-bold">All Products</h1>
-           
-
-            <div>
-            <div class="overflow-x-auto">
-  <table class="table w-full">
-    
-    <thead>
-      <tr>
-        <th>Serial No</th>
-        <th>Product Name</th>
-        <th></th>
-        
-      </tr>
-    </thead>
-    <tbody>
-    {
-                product.map((product, index) => 
-                    <tr>
-                    <th>{index + 1}</th>
-                    <td>{product.name} </td>
-                    
-                    <td>
-                    <button class="btn btn-xs" onClick={() => handleDelete(product._id) }>Delete</button>
-                    </td>
-                  </tr>)
-                
-                
-            }
-
-      
-     
-      
-    </tbody>
-  </table>
-</div>
-            
+        <div>
+            <h2 className="text-2xl my-5 font-bold text-secondary">Manage Doctors: {parts.length}</h2>
+            <div class="overflow-x-auto my-5">
+                <table class="table w-full">
+                    <thead>
+                        <tr>
+                            <th>Serial</th>
+                            <th>Name</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            parts.map((part, index) => <ProductRow
+                                key={part._key}
+                                part={part}
+                                index={index}
+                                refetch={refetch}
+                                setDeletingProduct={setDeletingProduct}
+                            ></ProductRow>)
+                        }
+                    </tbody>
+                </table>
             </div>
-           
+            {deletingProduct && <ConfirmModal
+                deletingProduct={deletingProduct}
+                refetch={refetch}
+                setDeletingProduct={setDeletingProduct}
+            ></ConfirmModal>}
         </div>
     );
 };

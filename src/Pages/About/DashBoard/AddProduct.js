@@ -8,7 +8,7 @@ import Loading from '../../Shared/Loading';
 const AddProduct = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
-    const { data:  isLoading } = useQuery('services', () => fetch('http://localhost:5000/service').then(res => res.json()))
+    const { data: services,  isLoading } = useQuery('services', () => fetch('http://localhost:5000/part').then(res => res.json()))
 
     const imageStorageKey='c4c31d84d783b443a6129b0b8865fd67';
 
@@ -37,7 +37,7 @@ const AddProduct = () => {
                     img: img
                 }
                 // send to your database 
-                fetch('http://localhost:5000/product', {
+                fetch('http://localhost:5000/part', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',
@@ -67,7 +67,7 @@ const AddProduct = () => {
 
     return (
         <div>
-            <h2 className="text-2xl">Add a New Doctor</h2>
+            <h2 className="text-2xl font-bold text-secondary my-5">Add a New Product</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
 
                 <div className="form-control w-full max-w-xs">
