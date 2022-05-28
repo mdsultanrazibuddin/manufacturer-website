@@ -1,4 +1,3 @@
-import React from 'react';
 
 import auth from '../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -7,6 +6,7 @@ import { toast } from 'react-toastify';
 
 
 const ButtonModal = ({product, setProduct}) => {
+   
     const {_id,name,img} = product;
     
     const [user, loading] = useAuthState(auth);
@@ -66,6 +66,8 @@ const ButtonModal = ({product, setProduct}) => {
                            <input type="text" name='email' disabled value={user?.email || ''} class="input input-bordered w-full max-w-xs" />
                            <input type="number" name='phone' placeholder="Phone Number" class="input input-bordered w-full max-w-xs" />
                            <input type="number" name='quantity' placeholder="Quantity Number" class="input input-bordered w-full max-w-xs" />
+                         
+                           
                            <input type="submit" value="Submit" class=" btn btn-secondary w-full max-w-xs" />
                         </form>
                         
