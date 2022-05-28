@@ -3,7 +3,7 @@ import React from 'react';
 const ManageAllProduct = () => {
     return (
         <div>
-            <h1>My History</h1>
+            <h1>Manage All Product</h1>
         </div>
     );
 };

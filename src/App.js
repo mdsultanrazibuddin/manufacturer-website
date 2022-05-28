@@ -25,6 +25,7 @@ import ManageAllProduct from './Pages/About/DashBoard/ManageAllProduct';
 import ManageProduct from './Pages/About/DashBoard/ManageProduct';
 import RequireAdmin from './Pages/About/DashBoard/RequireAdmin';
 import Payment from './Pages/About/DashBoard/Payment';
+import Review from './Pages/About/DashBoard/Review';
 
 
 
@@ -71,6 +72,8 @@ function App() {
       <Route path="signup" element={<SignUp/>}/>
       <Route path="*" element={<NotFound/>}/>
       <Route path="portfolio" element={<Portfolio/>}/>
+      <Route path="review" element={<Review/>}/>
+
       
        
         

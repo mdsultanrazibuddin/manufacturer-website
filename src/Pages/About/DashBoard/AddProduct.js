@@ -36,7 +36,7 @@ const AddProduct = () => {
                     description: data.description,
                     img: img
                 }
-                // send to your database 
+                
                 fetch('https://mysterious-hamlet-70060.herokuapp.com/part', {
                     method: 'POST',
                     headers: {
@@ -195,7 +195,7 @@ const AddProduct = () => {
                     </label>
                     <input
                         type="file"
-                        className="input input-bordered w-full max-w-xs"
+                        className="input input-bordered w-full h-52 max-w-xs"
                         {...register("image", {
                             required: {
                                 value: true,

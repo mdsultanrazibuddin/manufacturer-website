@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 
 const ButtonModal = ({product, setProduct}) => {
    
-    const {_id,name,img} = product;
+    const {_id,name,img, price} = product;
     
     const [user, loading] = useAuthState(auth);
     
@@ -24,7 +24,7 @@ const ButtonModal = ({product, setProduct}) => {
             productId: _id,
             product: name,
             
-            
+            price: price,
             client: user.email,
             clientName: user.displayName,
             phone: event.target.phone.value,
@@ -66,6 +66,7 @@ const ButtonModal = ({product, setProduct}) => {
                            <input type="text" name='email' disabled value={user?.email || ''} class="input input-bordered w-full max-w-xs" />
                            <input type="number" name='phone' placeholder="Phone Number" class="input input-bordered w-full max-w-xs" />
                            <input type="number" name='quantity' placeholder="Quantity Number" class="input input-bordered w-full max-w-xs" />
+                           <input type="number" name='price' placeholder="Price" class="input input-bordered w-full max-w-xs" />
                          
                            
                            <input type="submit" value="Submit" class=" btn btn-secondary w-full max-w-xs" />

@@ -42,29 +42,33 @@ const MyProducts = () => {
   <table class="table w-full">
     
     <thead>
-      <tr>
-        <th>Serial</th>
-        <th>Name</th>
-        <th>Product</th>
-        <th>Email Address</th>
-        <th>Payment</th>
-      </tr>
-    </thead>
-    <tbody>
+        <tr>
+            <th>Serial</th>
+            <th>Name</th>
+            <th>Product</th>
+            <th>Email Address</th>
+            <th>Payment</th>
+        </tr>
+        </thead>
+        <tbody>
 
         {
-            products.map((p, index) =>
-                <tr>
-        <th>{index + 1}</th>
-        <td>{p.clientName}</td>
-        <td>{p.product}</td>
-        <td>{p.client}</td>
-        <td>
-          {(p.price && !p.paid) && <Link to ={`/dashboard/payment/${p._id}`}> <button className='btn btn-xs btn-secondary'>Pay</button></Link>}
-          {(p.price && p.paid) &&  <span className='btn btn-xs btn-secondary'>Paid</span>}
-          
-          </td>
-      </tr> )
+                    products.map((p, index) =>
+                    <tr>
+                        <th>{index + 1}</th>
+                        <td>{p.clientName}</td>
+                        <td>{p.product}</td>
+                        <td>{p.client}</td>
+                        <td>
+                            {(p.price && !p.paid) && <Link to={`/dashboard/payment/${p._id}`}><button className='btn btn-xs btn-success'>pay</button></Link>}
+                            {(p.price && p.paid) && 
+                                <div>
+                                    <p><span className='text-success'>Paid</span></p>
+                                    <p>Transaction id: <span className='text-success'>{p.transactionId}</span></p>
+                                </div>}
+                        
+                        </td>
+                    </tr> )
         }
       
       
