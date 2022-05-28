@@ -51,11 +51,11 @@ import Loading from '../../Shared/Loading';
         <div class="hero ">
             <div class="hero-content flex-col lg:flex-col-reverse">
 
-                <div class="card   max-w-sm shadow-2xl bg-base-500">
+                <div class="card my-5  max-w-sm shadow-2xl bg-base-500">
 
                     <div class="card-body w-80">
                             <div>
-                                <h2 className='text-2xl text-center'>Add a Review</h2>
+                                <h2 className="text-2xl font-bold text-secondary my-5 text-center">Add a Review</h2>
                             </div>
                         <form onSubmit={handleSubmit(handleReview)}>
 
