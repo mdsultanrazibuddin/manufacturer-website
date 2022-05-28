@@ -8,7 +8,7 @@ import Loading from '../../Shared/Loading';
 const AddProduct = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
-    const { data: services,  isLoading } = useQuery('services', () => fetch('http://localhost:5000/part').then(res => res.json()))
+    const { data: services,  isLoading } = useQuery('services', () => fetch('https://mysterious-hamlet-70060.herokuapp.com/part').then(res => res.json()))
 
     const imageStorageKey='c4c31d84d783b443a6129b0b8865fd67';
 
@@ -37,7 +37,7 @@ const AddProduct = () => {
                     img: img
                 }
                 // send to your database 
-                fetch('http://localhost:5000/part', {
+                fetch('https://mysterious-hamlet-70060.herokuapp.com/part', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',

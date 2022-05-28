@@ -52,8 +52,10 @@ const Blogs = () => {
                             <div class="card-body">
                                     <h2 class="card-title text-2xl font-bold text-primary">Q-4: You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?</h2>
                                     <p className='text-secondary font-bold'>Ans: array_product() returns the product of values in an array. <br />
-                                     const arrayProduct = [name, price, description]</p>
-                                     arrayProduct[0]
+                                     const arrayProduct = [name, price, description] <br />
+                                     const arr = arrayProduct[0] <br />
+                                     console.log(arr)</p>
+                                    
                             </div>
                     </div>
                 </div>

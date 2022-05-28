@@ -5,6 +5,8 @@ import ButtonModal from './ButtonModal';
 
 
 
+
+
 const Parts = () => {
     const [parts, setParts] = useState([]);
     const [product, setProduct] = useState()
@@ -12,7 +14,7 @@ const Parts = () => {
     
     
     useEffect( () => {
-        fetch('http://localhost:5000/part')
+        fetch('https://mysterious-hamlet-70060.herokuapp.com/part')
         .then(res => res.json())
         .then(data => setParts(data))
 

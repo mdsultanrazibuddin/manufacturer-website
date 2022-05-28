@@ -31,7 +31,7 @@ const ButtonModal = ({product, setProduct}) => {
             Quantity: event.target.quantity.value
         }
 
-        fetch('http://localhost:5000/booking', {
+        fetch('https://mysterious-hamlet-70060.herokuapp.com/booking', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

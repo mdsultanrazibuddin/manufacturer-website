@@ -2,7 +2,7 @@
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import auth from '../../../firebase.init';
 
@@ -13,7 +13,7 @@ const MyProducts = () => {
     
     useEffect(()=>{
         if(user){
-            fetch(`http://localhost:5000/booking?client=${user.email}`, {
+            fetch(`https://mysterious-hamlet-70060.herokuapp.com/booking?client=${user.email}`, {
                 method: 'GET',
                 headers:{
                     'authorization':`Bearer ${localStorage.getItem('accessToken')}`
@@ -47,6 +47,7 @@ const MyProducts = () => {
         <th>Name</th>
         <th>Product</th>
         <th>Email Address</th>
+        <th>Payment</th>
       </tr>
     </thead>
     <tbody>
@@ -58,6 +59,11 @@ const MyProducts = () => {
         <td>{p.clientName}</td>
         <td>{p.product}</td>
         <td>{p.client}</td>
+        <td>
+          {(p.price && !p.paid) && <Link to ={`/dashboard/payment/${p._id}`}> <button className='btn btn-xs btn-secondary'>Pay</button></Link>}
+          {(p.price && p.paid) &&  <span className='btn btn-xs btn-secondary'>Paid</span>}
+          
+          </td>
       </tr> )
         }
       

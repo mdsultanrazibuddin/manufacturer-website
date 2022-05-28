@@ -24,6 +24,8 @@ import MakeAdmin from './Pages/About/DashBoard/MakeAdmin';
 import ManageAllProduct from './Pages/About/DashBoard/ManageAllProduct';
 import ManageProduct from './Pages/About/DashBoard/ManageProduct';
 import RequireAdmin from './Pages/About/DashBoard/RequireAdmin';
+import Payment from './Pages/About/DashBoard/Payment';
+
 
 
 
@@ -55,10 +57,13 @@ function App() {
         <Route index element={<MyProducts></MyProducts>}></Route>
         <Route path='review' element={<MyReviews></MyReviews>}></Route>
         <Route path='profile' element={<MyProfile></MyProfile>}></Route>
-        <Route path='add' element={<AddProduct></AddProduct>}></Route>
-        <Route path='admin' element={<MakeAdmin></MakeAdmin>}></Route>
+        <Route path='payment/:id' element={<Payment></Payment>}></Route>
+        
+        <Route path='admin' element={ <RequireAdmin><MakeAdmin></MakeAdmin></RequireAdmin>}></Route>
         <Route path='allProduct' element={<RequireAdmin><ManageAllProduct></ManageAllProduct></RequireAdmin>}></Route>
-        <Route path='manage' element={<ManageProduct></ManageProduct>}></Route>
+        <Route path='manage' element={<RequireAdmin><ManageProduct></ManageProduct></RequireAdmin>}></Route>
+        <Route path='add' element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>}></Route>
+       
 
 
       </Route>
@@ -66,6 +71,7 @@ function App() {
       <Route path="signup" element={<SignUp/>}/>
       <Route path="*" element={<NotFound/>}/>
       <Route path="portfolio" element={<Portfolio/>}/>
+      
        
         
      
